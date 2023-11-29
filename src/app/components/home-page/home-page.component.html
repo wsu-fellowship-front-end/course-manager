@@ -1,0 +1,66 @@
+<app-header></app-header>
+<div class="body-margin">
+  <div class="flex w-100">
+    <button class="button-styling flex-auto" (click)="openAddCourse()">Add Course</button>
+  </div>
+  <div class="flex flex-wrap w-100">
+    <div *ngFor="let course of courses">
+      <div>
+        {{course.name}}
+      </div>
+      <!----
+      TODO: Add Course Card Content Here
+      ---->
+    </div>
+  </div>
+</div>
+
+
+<p-dialog [(visible)]="showDeleteModal" [modal]="true">
+  <!----
+  TODO: Add Delete Modal Content Here
+  ---->
+</p-dialog>
+
+<p-dialog [(visible)]="showEditModal" [modal]="true">
+  <!--
+  TODO: Add Edit Modal Content Here
+  --->
+</p-dialog>
+
+<p-dialog [(visible)]="showAddCourseModal" [modal]="true" [draggable]="false">
+  <ng-template pTemplate="header">
+    <div>
+      Add Course
+    </div>
+  </ng-template>
+  <div class="flex flex-col w-100 gap-2">
+    <div class="flex flex-col gap">
+      <label class="font-bold">Course Name</label>
+      <input type="text" class="input-style" [(ngModel)]="courseAdd.name">
+    </div>
+    <div class="flex flex-col gap">
+      <label class="font-bold">Course Code</label>
+      <input type="text" class="input-style" [(ngModel)]="courseAdd.code">
+    </div>
+    <div class="flex flex-col gap">
+      <label class="font-bold">Course Type</label>
+      <input type="text" class="input-style" [(ngModel)]="courseAdd.type">
+    </div>
+    <div class="flex flex-col gap">
+      <label class="font-bold">Course Level</label>
+      <select name="level" class="input-style" [(ngModel)]="courseAdd.level">
+        <option value="UNDERGRADUATE">Undergraduate</option>
+        <option value="GRADUATE">Graduate</option>
+      </select>
+    </div>
+    <div class="flex flex-col gap">
+      <label class="font-bold">Course Credit Hours</label>
+      <input type="number" class="input-style" [(ngModel)]="courseAdd.creditHours">
+    </div>
+    <div class="flex w-100 justify-between">
+      <button class="cancel-button" (click)="closeAddModal()">Cancel</button>
+      <button class="button-styling" (click)="confirmAdd()">Confirm</button>
+    </div>
+  </div>
+</p-dialog>
