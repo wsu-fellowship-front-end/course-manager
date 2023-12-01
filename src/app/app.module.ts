@@ -8,6 +8,7 @@ import {DialogModule} from 'primeng/dialog';
 import { AppComponent } from './app.component';
 import {HeaderComponent} from './components/header/header.component';
 import {HomePageComponent} from './components/home-page/home-page.component';
+import {CardModule} from "primeng/card";
 
 @NgModule({
   declarations: [
@@ -15,13 +16,14 @@ import {HomePageComponent} from './components/home-page/home-page.component';
     HomePageComponent,
     HeaderComponent,
   ],
-  imports: [
-    BrowserAnimationsModule,
-    BrowserModule,
-    DialogModule,
-    FormsModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserAnimationsModule,
+        BrowserModule,
+        DialogModule,
+        FormsModule,
+        HttpClientModule,
+        CardModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

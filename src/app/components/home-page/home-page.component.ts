@@ -23,7 +23,7 @@ export class HomePageComponent implements OnInit {
    * ngOnInit is a lifecycle hook. It is called after the constructor. And is only called once. This hook is good for fetching initial data
    */
   ngOnInit(): void {
-    // TODO: Add code here
+    this.courseService.getCourses().subscribe(courses => this.courses = courses)
   }
 
   /**
@@ -46,8 +46,9 @@ export class HomePageComponent implements OnInit {
    *  This function should be called to open the Delete Course p-dialog modal.
    *  Will need to keep track of the id of the course to send to the service
    */
-  openDelete(course: Course) {
-    // TODO: add code here
+  openDelete(id: number) {
+    this.id = id;
+    this.showDeleteModal = true;
   }
 
   /**
@@ -55,14 +56,15 @@ export class HomePageComponent implements OnInit {
    *  Will also need to close the modal
    */
   deleteCourse() {
-    // TODO: add code here
+    this.courseService.deleteCourse(this.id);
+    this.showDeleteModal = false;
   }
 
   /**
    *  This function should be invoked when the user cancels deleting a course.
    */
   closeDeleteModal() {
-    // TODO: add code here
+    this.showDeleteModal = false;
   }
 
   /**

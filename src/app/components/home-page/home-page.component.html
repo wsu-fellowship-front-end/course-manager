@@ -3,13 +3,28 @@
   <div class="flex w-100">
     <button class="button-styling flex-auto" (click)="openAddCourse()">Add Course</button>
   </div>
-  <div class="flex flex-wrap w-100">
+  <div class="flex flex-wrap w-100 ">
     <div *ngFor="let course of courses">
       <div>
-        {{course.name}}
+        <label class="font-bold"> {{ course.name }}</label>
+        <label>
+          <span> Credit Hours:</span>
+          {{course.creditHours}}
+        </label>
+      </div>
+      <div>
+        {{course.code}}
+      </div>
+      <div>
+        {{course.id}}
+      </div>
+
+      <div>
+        <button (click)="openEdit(course)">Edit</button>
+        <button (click)="openDelete(course.id)">Delete</button>
       </div>
       <!----
-      TODO: Add Course Card Content Here
+      TODO: Add Course Content Here
       ---->
     </div>
   </div>
@@ -17,9 +32,13 @@
 
 
 <p-dialog [(visible)]="showDeleteModal" [modal]="true">
-  <!----
-  TODO: Add Delete Modal Content Here
-  ---->
+  <div>
+    <span>Are you sure you want to delete?</span>
+    <div>
+      <button (click)="closeDeleteModal()">Cancel</button>
+      <button (click)="deleteCourse()">Delete</button>
+    </div>
+  </div>
 </p-dialog>
 
 <p-dialog [(visible)]="showEditModal" [modal]="true">

@@ -33,8 +33,7 @@ export class CourseService {
    * This method should be used for retrieving the full list of courses.
    */
   getCourses(): Observable<Course[]> {
-    // TODO: add code here
-    return of([]);
+    return this.http.get<Course[]>(this.apiUrl, {headers: this.headers});
   }
 
   /**
@@ -61,8 +60,11 @@ export class CourseService {
    * @param id
    */
   deleteCourse(id: number) {
-    // TODO: add code here
-    console.log(`deleteCourse called with id: ${id}`);
+    const url = `${this.apiUrl}/${id}`;
+    this.http.delete<Course[]>(url, {headers: this.headers}).subscribe(
+        () => console.log(`Course of id $(id) has been deleted`),
+        error => console.error('Error: ', error)
+    );
   }
 
   /**
@@ -70,8 +72,8 @@ export class CourseService {
    * @param course
    */
   updateCourse(course: Course): Observable<Course> {
-    // TODO: add code here
-    return of({} as Course);
+    const url = `${this.apiUrl}/${course.id}`;
+    return this.http.put<Course>(url, course, {headers: this.headers});
   }
 
 }
