@@ -4,8 +4,8 @@
     <button class="button-styling flex-auto" (click)="openAddCourse()">Add Course</button>
   </div>
   <div class="flex flex-wrap w-100 ">
-    <div *ngFor="let course of courses">
-      <div>
+    <div *ngFor="let course of courses" class="course-single body-margin">
+      <div >
         <label class="font-bold"> {{ course.name }}</label>
         <label>
           <span> Credit Hours:</span>
@@ -20,8 +20,8 @@
       </div>
 
       <div>
-        <button (click)="openEdit(course)">Edit</button>
-        <button (click)="openDelete(course.id)">Delete</button>
+        <button (click)="openEdit(course)" class="button-styling">Edit</button>
+        <button (click)="openDelete(course.id)" class="delete-button">Delete</button>
       </div>
       <!----
       TODO: Add Course Content Here
