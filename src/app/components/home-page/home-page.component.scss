@@ -44,8 +44,13 @@
 .course-single{
   border: 2px solid #046138;
   border-radius: 10%;
-  max-width: 15%;
+  max-width: 20%;
   max-height: 15%;
   padding: 0.5%;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.info-button{
+  border: none;
+  background-color: white;
 }
