@@ -3,15 +3,15 @@
   <div class="flex w-100">
     <button class="button-styling flex-auto" (click)="openAddCourse()">Add Course</button>
   </div>
-  <div class="flex flex-wrap w-100 ">
-    <div *ngFor="let course of courses" class="course-single body-margin">
-      <div >
+  <div class="course-container">
+    <div *ngFor="let course of courses" class=" course-single body-margin">
+      <div > <!--All Course cards-->
         <label class="font-bold"> {{ course.name }}</label>
         <label>
           <span> Credit Hours:</span>
           {{course.creditHours}}
         </label>
-      </div>
+      
       <div>
         {{course.code}}
       </div>
@@ -20,9 +20,9 @@
       </div>
       <div class="margin-top border-top">
         <!--Insert course description here-->
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum consectetur obcaecati amet quibusdam necessitatibus error maxime dolore? Placeat minus tenetur error ut eaque explicabo porro officia. Iste error fugiat autem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ea consectetur eius! Quibusdam ipsum delectus id ut a exercitationem voluptatum perspiciatis nesciunt facere similique, quo omnis, fuga alias asperiores architecto?
       </div>
-    
+
 
 
       <div class="margin-top">
@@ -34,6 +34,7 @@
       TODO: Add Course Content Here
       ---->
     </div>
+  </div> <!-- Entire course cards-->
   </div>
 </div>
 
