@@ -16,6 +16,10 @@
           {{course.creditHours}}
         </label>
         <label>
+          <span><br> Course Type:</span>
+          {{course.type}}
+        </label>
+        <label>
           <span> <br> Course Code:</span>
           {{course.code}}
         </label>
@@ -23,21 +27,17 @@
           <span> <br> Course ID:</span>
           {{course.id}}
         </label>
-
       <div class="margin-top border-top">
         {{course.description}}
       </div>
 
 
 
-      <div class="margin-top button-array">
+      <div class="button-array">
         <button (click)="openEdit(course)" class="button-styling">Edit</button>
         <button class="body-margin info-button">Get Course Info</button>
         <button (click)="openDelete(course.id)" class="delete-button">Delete</button>
       </div>
-      <!---- 
-      TODO: Add Course Content Here
-      ---->
     </div>
   </div> 
   </div>
@@ -55,9 +55,6 @@
 </p-dialog>
 
 <p-dialog [(visible)]="showEditModal" [modal]="true">
-  <!--
-  TODO: Add Edit Modal Content Here
-  --->
   <ng-template pTemplate="header">
     <div>
       Edit Course
