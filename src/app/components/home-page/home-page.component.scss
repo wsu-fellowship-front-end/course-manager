@@ -44,7 +44,7 @@
 .course-single{
   border: 2px solid #046138;
   border-radius: 4%;
-  max-width: 29%;
+  width: 29%;
   max-height: 29%;
   padding: 0.5%;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -64,7 +64,7 @@
 .button-array{
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
 }
 
 .test{
@@ -73,20 +73,15 @@
 
 @media screen and (max-width:768px) and (min-width:426px){
   .course-single{
-    color: purple;
-  }
+    width: 47%;
+    max-height: 47%;
 
-  .course-single{
-    max-width: 47%;
   }
 }
 
 @media screen and (max-width: 425px) and (min-width:0) {
   .course-single{
-    color: blue;
-  }
-  .course-single{
-    max-width: 95%;
-    
+    width: 95%;
+    max-height: 95%;
   }
 }
